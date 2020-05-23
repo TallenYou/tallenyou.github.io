@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tallenyou.github.io/</id>
-    <title>塔伦</title>
-    <updated>2020-05-23T03:47:08.159Z</updated>
+    <title>Musk的碎碎念</title>
+    <updated>2020-05-23T04:03:27.386Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tallenyou.github.io/"/>
     <link rel="self" href="https://tallenyou.github.io/atom.xml"/>
     <subtitle>坦荡面对，大胆前行</subtitle>
     <logo>https://tallenyou.github.io/images/avatar.png</logo>
     <icon>https://tallenyou.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 塔伦</rights>
+    <rights>All rights reserved 2020, Musk的碎碎念</rights>
     <entry>
-        <title type="html"><![CDATA[Hello W]]></title>
+        <title type="html"><![CDATA[Hello World]]></title>
         <id>https://tallenyou.github.io/post/hello-w/</id>
         <link href="https://tallenyou.github.io/post/hello-w/">
         </link>
         <updated>2020-05-20T14:45:25.000Z</updated>
-        <content type="html"><![CDATA[<p>你好，我来了</p>
+        <content type="html"><![CDATA[<p>你好，陌生人。</p>
 ]]></content>
     </entry>
 </feed>
