@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tallenyou.github.io/</id>
     <title>Musk的碎碎念</title>
-    <updated>2020-05-23T04:03:27.386Z</updated>
+    <updated>2020-05-23T08:59:20.457Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tallenyou.github.io/"/>
     <link rel="self" href="https://tallenyou.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://tallenyou.github.io/images/avatar.png</logo>
     <icon>https://tallenyou.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Musk的碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[大概是这样子的，大概也是非常困难的事情]]></title>
+        <id>https://tallenyou.github.io/post/da-gai-shi-zhe-yang-zi-de-da-gai-ye-shi-fei-chang-kun-nan-de-shi-qing/</id>
+        <link href="https://tallenyou.github.io/post/da-gai-shi-zhe-yang-zi-de-da-gai-ye-shi-fei-chang-kun-nan-de-shi-qing/">
+        </link>
+        <updated>2020-05-23T08:58:44.000Z</updated>
+        <content type="html"><![CDATA[<p>[TOC]</p>
+<blockquote>
+<p>世界的本质是混乱和秩序，一只脚坚定地踏在秩序和安全中，另一只脚则踏在混乱、可能性、成长和冒险里。当你恰到好处地处在秩序和混乱的交界线上时，生活就会变得跌宕起伏、扣人心弦且充满意义，你也会进入忘我的专注状态。</p>
+</blockquote>
+<h2 id="大概是这样子的">大概是这样子的</h2>
+<h2 id="矛盾的地方">矛盾的地方</h2>
+<h2 id="大概是非常困难的事情">大概是非常困难的事情</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello World]]></title>
         <id>https://tallenyou.github.io/post/hello-w/</id>
