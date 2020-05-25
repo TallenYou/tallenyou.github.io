@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tallenyou.github.io/</id>
     <title>Musk的碎碎念</title>
-    <updated>2020-05-24T14:29:34.838Z</updated>
+    <updated>2020-05-25T13:01:25.196Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tallenyou.github.io/"/>
     <link rel="self" href="https://tallenyou.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://tallenyou.github.io/images/avatar.png</logo>
     <icon>https://tallenyou.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Musk的碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[运用递归解决树的问题]]></title>
+        <id>https://tallenyou.github.io/post/yun-yong-di-gui-jie-jue-shu-de-wen-ti/</id>
+        <link href="https://tallenyou.github.io/post/yun-yong-di-gui-jie-jue-shu-de-wen-ti/">
+        </link>
+        <updated>2020-05-25T13:00:09.000Z</updated>
+        <content type="html"><![CDATA[<p>此刻是2020年5月25日20:58:10，由于今晚时间有限，有正事要做，内容暂时不做详细说明。<br>
+后面有时间的话，我会结合具体题目的和代码分析。</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/05/25/tCNCuR.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 大概是这样子的，应该是困难的事情]]></title>
         <id>https://tallenyou.github.io/post/da-gai-shi-zhe-yang-zi-de-da-gai-ye-shi-fei-chang-kun-nan-de-shi-qing/</id>
