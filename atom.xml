@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://tallenyou.github.io/</id>
     <title>Musk的碎碎念</title>
-    <updated>2020-06-14T12:29:47.111Z</updated>
+    <updated>2020-06-14T14:45:12.685Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://tallenyou.github.io/"/>
     <link rel="self" href="https://tallenyou.github.io/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://tallenyou.github.io/images/avatar.png</logo>
     <icon>https://tallenyou.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Musk的碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[现代操作系统系列(1)——操作系统环境和系统调用]]></title>
+        <id>https://tallenyou.github.io/post/xian-dai-cao-zuo-xi-tong-xi-lie-1-cao-zuo-xi-tong-huan-jing-he-xi-tong-diao-yong/</id>
+        <link href="https://tallenyou.github.io/post/xian-dai-cao-zuo-xi-tong-xi-lie-1-cao-zuo-xi-tong-huan-jing-he-xi-tong-diao-yong/">
+        </link>
+        <updated>2020-06-14T14:44:37.000Z</updated>
+        <content type="html"><![CDATA[<p>[toc]</p>
+<h2 id="关于本系列的一点题外话">关于本系列的一点题外话</h2>
+<p>这是我本人关于操作系统的基本内容，会涉及到操作系统面试中的重点概念。但是限于篇幅和个人能力，本系列文章不会覆盖操作系统的所有细节。</p>
+<p>希望本文能给所有阅读者一点点收获，也希望通过输出倒逼输入，让知识在我脑中有更深入的理解，提升自己编码的内功。</p>
+<p>各位读者仅凭本文只能知道一些操作系统的皮毛，要想有更进一步的提升，更建议阅读以下参考书目和课程。</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>最后，可以转载，注明来源即可</p>
+<h2 id="计算机硬件简介">计算机硬件简介</h2>
+<h3 id="处理器cpu">处理器（CPU）</h3>
+<ul>
+<li>
+<p>CPU在内存中取出指令并执行。在每个CPU基本周期中，首先从内存中取出指令，解码以确定其类型和操作数，接着执行之，然后取指、解码并执行下一条指令。按照这一方式，程序被执行完成。</p>
+</li>
+<li>
+<p>每个CPU都有一套可执行的专门指令集，所以，x86处理器不能执行ARM程序，同理，反之也不行。</p>
+</li>
+<li>
+<p>CPU执行指令的时间比从访问内存的时间短得多。所有，在CPU内部有用来保存关键变量和临时数据的寄存器。即所谓的通用寄存器</p>
+</li>
+<li>
+<p>三个特殊寄存器需要认识：程序计数器（PC）、堆栈指针、程序状态字（PSW）</p>
+<ul>
+<li><strong>程序计数器（PC）</strong>：保存了将要取出的下一条指令的内存地址。在指令取出之后，程序计数器就被更新以便指向后继的指令。</li>
+<li><strong>堆栈指针</strong>：指向内存中当前栈的顶端。该栈包含了每个执行过程的栈帧。一个过程的栈帧中保存了有关的输入参数、局部变量以及那些没有保存在寄存器中的临时变量</li>
+<li><strong>程序状态字（PSW）</strong>：这个寄存器包含了条件码位（由比较指令设置）、CPU优先级、模式（用户态或内核态），以及各种其他控制位。<strong>在系统调用和I/O中，PSW的作用很重要。</strong></li>
+</ul>
+</li>
+<li>
+<p>关于工作模型：古早的同时读取、解读和执行一条指令已经被放弃。流水线模型也已经落伍。现在更先进的设计师超标量CPU，即取指，解码之后传入保持缓冲区，之后多个执行单元从缓冲区中不断移出并执行。因为<strong>带来的现象就是程序指令经常不按顺序执行。</strong></p>
+</li>
+<li>
+<p><strong>多数CPU都有两种状态：内核态和用户态</strong>，内核态运行操作系统程序（执行特权指令），用户态运行用户程序。（吐槽：其实CPU硬件设计不止两个状态，只是操作系统一般只用两个就够了）</p>
+</li>
+<li>
+<p>用户态到内核态的切换，需要执行系统调用（system call）以陷入内核并调用操作系统。又称<strong>TRAP</strong>陷入指令。<strong>实际上用户态到内核态的唯一途径就是中断（外中断）/异常（内中断）/陷入机制，内核态到用户态的途径是设置程序状态字PSW</strong></p>
+<h2 id="其他">其他</h2>
+</li>
+</ul>
+<p>存储器、磁盘、I/O设备、总线暂时不做展开</p>
+<h2 id="系统调用">系统调用</h2>
+<ul>
+<li>系统调用就是用户在编程时可以调用的<strong>操作系统功能</strong></li>
+<li>系统调用是操作系统提供给编程人员的<strong>唯一接口</strong></li>
+<li>系统调用使CPU状态从用户态<strong>陷入</strong>到内核态，这里就是涉及到<strong>TRAP陷入指令</strong>了</li>
+<li>每个操作系统都提供几百种<strong>系统调用，可分为：进程控制，进程通信、文件使用、目录维护、设备管理、信息维护等</strong>。（吐槽：其实windows的系统调用有数千个……）</li>
+<li><strong>系统调用</strong>就涉及到中断异常机制，所有中断异常机制基本按照下面这个<strong>工作步骤</strong>（<strong>划重点！</strong>）：中断保存、中断服务执行、中断恢复
+<ol>
+<li>硬件压入堆栈程序计数器等</li>
+<li>汇编语言过程保存寄存器值</li>
+<li>汇编语言过程设置新的堆栈</li>
+<li>C中断服务例程运行（典型地读和缓冲输入）</li>
+<li>调度程序决定下一个将运行的过程</li>
+<li>C过程返回至汇编代码</li>
+<li>汇编语言过程开始运行新的当前进程。</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 递归的道与术 [未完结版]]]></title>
         <id>https://tallenyou.github.io/post/di-gui-de-dao-yu-zhu-wei-wan-jie-ban/</id>
